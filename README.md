@@ -8,7 +8,6 @@ dfx identity get-principal
 
 2. Save it somewhere.
 
-e.g. My principal id is: gbdev-tyqsv-hnvqv-7mgz4-4kcfl-wbv6x-6khez-y56gq-uohqs-quomc-uqe
 
 
 3. Format and store it in a command line variable:
@@ -46,7 +45,7 @@ echo $CANISTER_PUBLIC_KEY
 
 4. Transfer half a billion tokens to the canister Principal ID:
 ```
-dfx canister call token transfer "($CANISTER_PUBLIC_KEY, 500_000_000)"
+dfx canister call token transfer "($CANISTER_PUBLIC_KEY, 5000000)"
 ```
 
 # Deploy the Project to the Live IC Network
@@ -74,7 +73,7 @@ echo $LIVE_CANISTER_KEY
 
 5. Transfer some tokens to the live canister:
 ```
-dfx canister --network ic call token transfer "($LIVE_CANISTER_KEY, 50_000_000)"
+dfx canister --network ic call token transfer "($LIVE_CANISTER_KEY, 5000000)"
 ```
 
 6. Get live canister front-end id:
@@ -82,4 +81,3 @@ dfx canister --network ic call token transfer "($LIVE_CANISTER_KEY, 50_000_000)"
 dfx canister --network ic id token_assets
 ```
 7. Copy the id from step 6 and add .raw.ic0.app to the end to form a URL.
-e.g. zdv65-7qaaa-aaaai-qibdq-cai.raw.ic0.app
