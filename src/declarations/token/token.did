@@ -1,6 +1,7 @@
 service : {
   balanceOf: (principal) -> (nat) query;
   firstBonus: () -> (text);
+  getBonus: () -> (nat) query;
   getName: () -> (text) query;
   getSymbol: () -> (text) query;
   transfer: (nat, principal) -> (text);

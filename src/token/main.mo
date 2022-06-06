@@ -28,6 +28,10 @@ actor Token {
         return name;
     };
 
+    public query func getBonus() : async Nat {
+        return bonusAmount;
+    };
+
     public shared(msg) func firstBonus() : async Text {
         let principalID = msg.caller;
         if(balances.get(principalID) == null) {

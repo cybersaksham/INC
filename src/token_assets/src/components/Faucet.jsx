@@ -7,12 +7,14 @@ import { AuthClient } from "../../../../node_modules/@dfinity/auth-client/lib/cj
 function Faucet() {
   const [cryptoName, setCryptoName] = useState("");
   const [cryptoSymbol, setCryptoSymbol] = useState("");
+  const [bonusAmt, setBonusAmt] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
   const [buttonText, setButtonText] = useState("Give Me!!");
 
   const getCrypto = async () => {
     setCryptoName(await token.getName());
     setCryptoSymbol(await token.getSymbol());
+    setBonusAmt(String(await token.getBonus()));
   };
 
   useEffect(() => {
@@ -45,8 +47,8 @@ function Faucet() {
         Faucet
       </h2>
       <label>
-        Get your free {cryptoName} ({cryptoSymbol}) tokens here! Claim 10,000{" "}
-        {cryptoSymbol} coins to your account on first signup.
+        Get your free {cryptoName} ({cryptoSymbol}) tokens here! Claim{" "}
+        {bonusAmt} {cryptoSymbol} coins to your account on first signup.
       </label>
       <p className="trade-buttons">
         <button id="btn-payout" disabled={isDisabled} onClick={handleClick}>
